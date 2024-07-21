@@ -1,0 +1,15 @@
+import { ComponentProps } from "react";
+{{#if hasVariants}}
+import { cn } from "@/utils";
+import type { VariantProps } from "class-variance-authority";
+import type { Expand } from "@/utils/types";
+import { {{ camelCase name }}Variants } from "./{{ kebabCase name }}.cva";
+{{/if}}
+
+export type {{ pascalCase name }}Props = ComponentProps<"div">{{#if hasVariants}} &
+  Expand<VariantProps<typeof {{ camelCase name }}Variants>>{{/if}};
+
+export const {{ pascalCase name }} = (props: {{ pascalCase name }}Props) => {
+  const { className, ...rest } = props;
+  return <div className={ {{#if hasVariants}}cn({{ camelCase name }}Variants({ className })){{else}}className{{/if}} } {...rest} />;
+};
