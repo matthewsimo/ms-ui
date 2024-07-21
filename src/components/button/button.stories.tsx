@@ -32,7 +32,5 @@ export const Default: Story = {
     onClick: () => {
       console.log("Hello World");
     },
-    variant: "default",
-    size: "default",
   },
 };

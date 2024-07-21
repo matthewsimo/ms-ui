@@ -4,10 +4,11 @@ import type { VariantProps } from "class-variance-authority";
 
 import { cn } from "@/utils";
 import { buttonVariants } from "./button.cva";
+import { Expand } from "@/utils/types";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+    Expand<VariantProps<typeof buttonVariants>> {
   asChild?: boolean;
 }
 
@@ -20,7 +21,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       asChild = false,
       ...props
     },
-    ref,
+    ref
   ) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -30,6 +31,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  },
+  }
 );
 Button.displayName = "Button";
