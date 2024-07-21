@@ -1,7 +1,7 @@
 {
   "name": "ms-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
@@ -14,8 +14,6 @@
     "add:ui": "bunx --bun shadcn-ui@latest add "
   },
   "dependencies": {
-    "@radix-ui/react-aspect-ratio": "^1.1.0",
-    "@radix-ui/react-hover-card": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "button": "^1.1.1",
     "class-variance-authority": "^0.7.0",
